@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTarot } from '../context/TarotContext';
+import { situationInterpretations } from '../data/interpretations';
 
 const ReadingResult: React.FC = () => {
   const { selectedCards, resetConsultation } = useTarot();
@@ -29,7 +30,9 @@ const ReadingResult: React.FC = () => {
               {selectedCard.title}: {selectedCard.card.name}
             </h3>
             <p className="interpretation-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              {selectedCard.type === 'situation' 
+                ? situationInterpretations[selectedCard.card.name]
+                : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}
             </p>
           </div>
         ))}
