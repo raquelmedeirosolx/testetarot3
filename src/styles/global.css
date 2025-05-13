@@ -25,6 +25,21 @@
   padding: 0;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(92, 42, 157, 0.3) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(92, 42, 157, 0.3);
+  border-radius: 3px;
 }
 
 body {
@@ -306,21 +321,6 @@ body {
   animation: fadeIn 0.8s ease-out;
   overflow-y: auto;
   max-height: 100vh;
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-primary) var(--color-background);
-}
-
-.reading-result::-webkit-scrollbar {
-  width: 8px;
-}
-
-.reading-result::-webkit-scrollbar-track {
-  background: var(--color-background);
-}
-
-.reading-result::-webkit-scrollbar-thumb {
-  background-color: var(--color-primary);
-  border-radius: 4px;
 }
 
 .cards-display {
