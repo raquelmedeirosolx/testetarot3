@@ -306,11 +306,26 @@ body {
   animation: fadeIn 0.8s ease-out;
   overflow-y: auto;
   max-height: 100vh;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) var(--color-background);
+}
+
+.reading-result::-webkit-scrollbar {
+  width: 8px;
+}
+
+.reading-result::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+.reading-result::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary);
+  border-radius: 4px;
 }
 
 .cards-display {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-bottom: 3rem;
   justify-items: center;
@@ -420,17 +435,30 @@ body {
 
 @media (max-width: 768px) {
   .reading-result {
-    padding: 1rem;
-    margin: 1rem auto;
+    padding: 0.5rem;
+    margin: 0.5rem auto;
   }
 
   .cards-display {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .result-card {
+    max-width: none;
+  }
+
+  .result-card-title {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .result-card-name {
+    font-size: 0.8rem;
   }
 
   .interpretation {
-    padding: 1.5rem;
+    padding: 1rem;
   }
 
   .revealed-card {
